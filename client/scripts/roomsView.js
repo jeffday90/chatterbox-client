@@ -7,6 +7,7 @@ var RoomsView = {
   },
 
   render: function() {
+    $('#Rooms').append(message)
   }
 
 };

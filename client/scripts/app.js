@@ -16,15 +16,26 @@ var App = {
     App.fetch(App.stopSpinner);
 
   },
-
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-
+      
+      for (var i = 0; i < data.results.length; i++){
+        MessagesView.renderMessage(data.results[i])
+      }
       callback();
     });
   },
+
+
+  // displayMessage: function (message){
+  //   //var $message = $('#chat');
+  //   debugger;
+  //   for (var i = 0; i < message.length; i++){
+  //     App.renderMessage(message[i]);
+  //   }
+  // },
 
   startSpinner: function() {
     App.$spinner.show();
