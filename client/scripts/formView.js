@@ -11,19 +11,19 @@ var FormView = {
     event.preventDefault();
     var messageText = $('input:text').val();
     var inputUsername = new URLSearchParams(window.location.search);
+    console.log(MessagesView.render.passedRoomname);
 
     var Message = {
       username: inputUsername.get('username'),
       text: messageText,
-      roomname: 'ballersClub'
+      roomname: 'put room name here'
     };
     
     var submitMessage = Message;
-
+    
+    //jQuery .empty();
 
     Messages.data.results.unshift(submitMessage);
-    //debugger;
-    //console.log(Messages.data);
     MessagesView.renderMessage(submitMessage);
 
     Parse.create(Message);

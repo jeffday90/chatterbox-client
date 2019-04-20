@@ -4,6 +4,9 @@ var App = {
 
   username: 'anonymous',
 
+
+  
+
   initialize: function() {
     App.username = window.location.search.substr(10);
 
@@ -20,6 +23,7 @@ var App = {
     Parse.readAll((data) => {
       Messages.data = data;
       MessagesView.render();
+      RoomsView.renderRoomname(Rooms.storage);
       callback();
       //console.log(data);
     });
