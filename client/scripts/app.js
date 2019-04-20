@@ -21,21 +21,12 @@ var App = {
       // examine the response from the server request:
       console.log(data);
       
-      for (var i = 0; i < data.results.length; i++){
-        MessagesView.renderMessage(data.results[i])
-      }
+      // for (let i = 0; i < data.results.length; i++){
+      //   MessagesView.renderMessage(data.results[i])
+      // }
       callback();
     });
   },
-
-
-  // displayMessage: function (message){
-  //   //var $message = $('#chat');
-  //   debugger;
-  //   for (var i = 0; i < message.length; i++){
-  //     App.renderMessage(message[i]);
-  //   }
-  // },
 
   startSpinner: function() {
     App.$spinner.show();
