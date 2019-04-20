@@ -18,13 +18,10 @@ var App = {
   },
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-      // examine the response from the server request:
-      console.log(data);
-      
-      // for (let i = 0; i < data.results.length; i++){
-      //   MessagesView.renderMessage(data.results[i])
-      // }
+      Messages.data = data;
+      MessagesView.render();
       callback();
+      //console.log(data);
     });
   },
 
